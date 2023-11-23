@@ -31,7 +31,7 @@ const createUser = (req, res) => {
   if (!req.body) return res.sendStatus(400);
   getMaxUserId().then((data) => {
     let maxId = data[0]['MAX(id)'];
-    const sql = `INSERT INTO opinio.User (id, mail, password, name, age, gender) VALUES (${++maxId},"${req.body.mail}", "${req.body.password}", "${req.body.name}", ${req.body.age}, "${req.body.gender}")`;
+    const sql = `INSERT INTO opinio.User (id, mail, password, name, age, gender) VALUES (${++maxId},"${req.body.mail}", "${req.body.password}", "${req.body.name}", ${req.body.age || null}, "${req.body.gender || null}")`;
     Pool.query(sql, (error, result, fields) => {
       if (error) return res.status(500).json(error);
       result ? res.send(result) : res.sendStatus(404);
@@ -59,7 +59,7 @@ const updateUser = (req, res) => {
       if (err) return res.status(500).json(err);
       result ? res.send(result) : res.sendStatus(404);
     });
-  };
+};
 
   const deleteAllUsers = (req, res) => {
     const sql = 'DELETE FROM opinio.User';
@@ -67,6 +67,6 @@ const updateUser = (req, res) => {
       if (error) return res.status(500).json(error);
       result ? res.send(result) : res.sendStatus(404);
     });
-  };
+};
 
 module.exports = { getUser, getAllUsers, createUser, deleteUser, updateUser, deleteAllUsers };
