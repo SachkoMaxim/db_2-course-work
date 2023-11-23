@@ -15,7 +15,7 @@ module.exports = {
     }]
   ],
   port: 3030,
-  base: '/db_labs/',
+  base: '/db_2-course-work/',
   theme: 'cool',
   // dest: 'dist',
   head: [
@@ -76,7 +76,7 @@ module.exports = {
 
     lastUpdated: 'Останнє оновлення', // string | boolean
       // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'https://github.com/kujo205/db_labs',
+    repo: 'https://github.com/SachkoMaxim/db_2-course-work',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Github',
@@ -96,7 +96,7 @@ module.exports = {
 
   },
   title: 'Система організації та управління опитуваннями експертів',
-  description: 'Лабораторні роботи з дисципліни "Організація баз даних"',
+  description: 'Курсова робота з дисципліни "Організація баз даних"',
   configureWebpack: {
     resolve: {
       alias: {
