@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env
 
 # abort on errors
 set -e
